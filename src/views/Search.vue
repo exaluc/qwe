@@ -26,7 +26,7 @@
 <template>
     <div class="search">
         <div class="left">
-            <img @click="goHome">
+            <img  @click="goHome">
         </div>
         <div class="right">
             <a-input-search
