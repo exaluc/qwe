@@ -58,7 +58,7 @@
         transform: translate(-50%,-50%); /* 50% */
     }
     .search-input{
-        width: 50%;
+        width: 600px;
     }
     .ha {
         text-align: center;
