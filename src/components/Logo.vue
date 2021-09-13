@@ -4,7 +4,6 @@
         <span class="logo logo-yellow">w</span>
         <span class="logo logo-blue">e</span>
         <span class="logo logo-green">?</span>
-
     </div>
 </template>
 <style lang="less" scoped>

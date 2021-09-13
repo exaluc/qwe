@@ -38,8 +38,6 @@
                 <searchResult :articles="item"></searchResult>
             </div>
         </div>
-
-
     </div>
 </template>
 
@@ -66,17 +64,22 @@
             },
             searchResult() {
                 if (this.searchText !== '') {
-                    this.$router.push({path: `/search`, query: {q: this.searchText}})
+                    this.$router.push({
+                        path: `/search`,
+                        query: {
+                            q: this.searchText
+                        }
+                    })
                 }
-                console.info("router query:" + this.$route.query.q)
-                console.info("search text: " + this.searchText)
+                // console.info("router query:" + this.$route.query.q)
+                // console.info("search text: " + this.searchText)
 
 
                 const path = 'http://localhost:5000/search?q=' + this.$route.query.q;
                 axios.get(path)
                     .then((res) => {
                         this.result = res.data;
-                        console.info(this.result)
+                        // console.info(this.result)
 
                     })
                     .catch((error) => {

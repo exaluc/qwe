@@ -12,7 +12,7 @@
     </a-button>
     <a-modal size="large" width="80%" :dialog-style="{ top: '20px' }" v-model="visible" :title=articles._source.titre @ok="handleOk">
       <template slot="footer">
-        <a-button key="submit" type="primary" :loading="loading" @click="handleOk">
+        <a-button key="submit" type="primary" @click="handleOk">
           Fermer
         </a-button>
       </template>
@@ -35,22 +35,22 @@
 </template>
 <script>
     export default {
-        name: "SearchResult",
-        props: ["articles"],
-        data() {
-    return {
-      visible: false,
-    };
-  },
-         methods: {
-    showModal() {
-      this.visible = true;
-    },
-    handleOk(e) {
-      console.log(e);
-      this.visible = false;
-    },
-  }, 
+      name: "SearchResult",
+      props: ["articles"],
+      data() {
+        return {
+          visible: false,
+        };
+      },
+      methods: {
+        showModal() {
+          this.visible = true;
+        },
+        handleOk(e) {
+          console.log(e);
+          this.visible = false;
+        },
+      },
     }
 </script>
 <style scoped>
