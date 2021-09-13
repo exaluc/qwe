@@ -2,7 +2,7 @@
   <div class="article">
       <a-card>
       <div>
-        <h4>{{articles._source.titre}}</h4>
+        <h2>{{articles._source.titre}}</h2>
         <p>
           <span v-html="articles._source.question.slice(0, 250)"></span>
         </p>
@@ -10,11 +10,23 @@
     <a-button type="primary" @click="showModal">
       Voir le contenu
     </a-button>
-    <a-modal :dialog-style="{ top: '20px' }" v-model="visible" :title=articles._source.titre @ok="handleOk">
+    <a-modal size="large" width="80%" :dialog-style="{ top: '20px' }" v-model="visible" :title=articles._source.titre @ok="handleOk">
+      <template slot="footer">
+        <a-button key="submit" type="primary" :loading="loading" @click="handleOk">
+          Fermer
+        </a-button>
+      </template>
       <div>
-        <p> 
+        <a-card>
+        <p>
           <span v-html="articles._source.question"></span>
         </p>
+        </a-card>
+        <a-card>
+        <p>
+          <span v-html="articles._source.reponse"></span>
+        </p>
+        </a-card>
       </div>
     </a-modal>
     <div style="text-align: right">{{articles._score}}</div>

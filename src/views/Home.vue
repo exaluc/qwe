@@ -8,6 +8,7 @@
                     placeholder="recherche"
                     v-model="searchText"
                     @search="onSearch"/>
+                    
         </div>
     </div>
 </template>
@@ -50,7 +51,7 @@
 
 </script>
 
-<style scoped>
+<style>
     .home {
         position:absolute;
         left:50%;    /* 50% */
@@ -63,5 +64,31 @@
     .ha {
         text-align: center;
     }
+.ant-modal-title {
 
+    font-size: 26px !important;
+
+}
+    code {
+    padding: 2px;
+background: #0d1825;
+color: #eff;
+margin: 2px;
+    }
+    pre {
+    padding: 10px;
+    font-size: 1em;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    margin-top: 0;
+    margin-bottom: 1em;
+    overflow: auto;
+    position: relative;
+box-shadow: 0px 2px 2px #000;
+margin-bottom: 1em;
+background: #0d1825;
+color: #eff;
+font-family: Monaco,Consolas,"Lucida Console",monospace;
+font-size: .75em;
+line-height: 1.8;
+    }
 </style>

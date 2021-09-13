@@ -21,12 +21,13 @@
         padding-top: 4px;
         text-align: center;
     }
+
 </style>
 
 <template>
     <div class="search">
         <div class="left">
-            <img  @click="goHome">
+            <img src="./../assets/qwe.png" @click="goHome">
         </div>
         <div class="right">
             <a-input-search

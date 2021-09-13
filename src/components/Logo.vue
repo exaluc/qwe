@@ -1,9 +1,9 @@
 <template>
     <div>
-        <span class="logo logo-blue">Q</span>
-        <span class="logo logo-red">w</span>
-        <span class="logo logo-yellow">e</span>
-        <span class="logo logo-blue">?</span>
+        <span class="logo logo-red">Q</span>
+        <span class="logo logo-yellow">w</span>
+        <span class="logo logo-blue">e</span>
+        <span class="logo logo-green">?</span>
 
     </div>
 </template>
