@@ -1,35 +1,41 @@
 <template>
   <div class="article">
-      <a-card>
+    <a-card>
       <div>
         <h2>{{articles._source.titre}}</h2>
         <p>
           <span v-html="articles._source.question.slice(0, 250)"></span>
         </p>
       </div>
-    <a-button type="primary" @click="showModal">
-      Voir le contenu
-    </a-button>
-    <a-modal size="large" width="90%" :dialog-style="{ top: '20px' }" v-model="visible" :title=articles._source.titre>
-      <template slot="footer">
-        <a-button key="submit" type="primary" @click="handleOk">
-          Fermer
-        </a-button>
-      </template>
       <div>
-        <a-card>
-        <p>
-          <span v-html="articles._source.question"></span>
-        </p>
-        </a-card>
-        <a-card>
-        <p>
-          <span v-html="articles._source.reponse"></span>
-        </p>
-        </a-card>
       </div>
-    </a-modal>
-    <div style="text-align: right">{{articles._score}}</div>
+      <div class="revue">
+        <a-button class="gauche" type="primary" @click="showModal">
+          Voir le contenu
+        </a-button>
+        <span class="droite">{{articles._score}}</span>
+      </div>
+
+      <a-modal size="large" width="95%" :dialog-style="{ top: '20px' }" 
+      v-model="visible" :title=articles._source.titre>
+        <template slot="footer">
+          <a-button key="submit" type="primary" @click="handleOk">
+            Fermer
+          </a-button>
+        </template>
+        <div>
+          <a-card>
+            <p>
+              <span v-html="articles._source.question"></span>
+            </p>
+          </a-card>
+          <a-card>
+            <p>
+              <span v-html="articles._source.reponse"></span>
+            </p>
+          </a-card>
+        </div>
+      </a-modal>
     </a-card>
   </div>
 </template>
@@ -53,8 +59,8 @@
     }
 </script>
 <style scoped>
-div {
-    margin-top: 12px;
+.article {
+    margin-top: 20px;
 }
 .article h4 {
   margin-bottom: 16px;
@@ -62,4 +68,12 @@ div {
 .article button {
   margin-top: 16px;
 }
+.revue
+{
+    display: block;
+
+}
+.revue .droite { float:right }
+.revue .gauche { float:left }
+
 </style>

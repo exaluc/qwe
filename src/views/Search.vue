@@ -1,9 +1,14 @@
 <style scoped>
-    .search {
-        padding-top: 24px;
-        overflow: hidden;
-        zoom: 1;
+    #qwe-fixed-top .logo-search {
+    width: 120px;
+    height: 31px;
+    float: left;
     }
+
+    .ant-layout-header {
+        padding: 0 20px;
+    }
+
 
     .left {
         float: left;
@@ -12,7 +17,9 @@
     }
 
     .right {
-        width: 80%;
+        width: 100%;
+        padding: 30px;
+        padding-top: 50px;
         overflow: hidden;
         zoom: 1;
     }
@@ -22,19 +29,57 @@
         text-align: center;
     }
 
+
+    .logo {
+        font-size: 2em;
+        font-weight: bolder;
+        float: left;
+    }
+
+    .logo-blue {
+        color: #4285f4;
+    }
+
+    .logo-red {
+        color: #e84235;
+    }
+
+    .logo-yellow {
+        color: #fabb06;
+    }
+
+    .logo-green {
+        color: #34a853;
+    }
 </style>
 
 <template>
-    <div class="search">
-        <div class="left">
-            <img src="./../assets/qwe.png" @click="goHome">
-        </div>
-        <div class="right">
-            <a-input-search
+    <div class="search" id="qwe-fixed-top">
+    <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
+      <div class="logo-search" @click="goHome">
+        
+        <span class="logo logo-red">Q</span>
+        <span class="logo logo-yellow">w</span>
+        <span class="logo logo-blue">e</span>
+        <span class="logo logo-green">?</span>
+      </div>
+      <logoSearch></logoSearch>
+      <a-menu
+        theme="dark"
+        mode="horizontal"
+        :default-selected-keys="['1']"
+        :style="{ lineHeight: '64px' }"
+      >
+
+        <a-input-search key="1"
                     v-model="searchText"
-                    size="large"
+                    placeholder="recherche"
+                    style="width: 250px"
                     @search="searchResult"/>
-            <div v-for="item in result" v-bind:key="item.titre">
+      </a-menu>
+    </a-layout-header>
+        <div class="right">
+                        <div v-for="item in result" v-bind:key="item.titre">
                 <searchResult :articles="item"></searchResult>
             </div>
         </div>
@@ -44,7 +89,7 @@
 <script>
     import axios from 'axios'
     import SearchResult from "../components/SearchResult";
-
+    
     export default {
         name: "Search",
         data() {

@@ -103,4 +103,8 @@
         font-size: .75em;
         line-height: 1.8;
     }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 </style>
