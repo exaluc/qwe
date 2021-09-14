@@ -75,7 +75,7 @@
                 // console.info("search text: " + this.searchText)
 
 
-                const path = 'http://localhost:5000/search?q=' + this.$route.query.q;
+                const path = 'http://alpha.qwe.fr/search/' + this.$route.query.q;
                 axios.get(path)
                     .then((res) => {
                         this.result = res.data;

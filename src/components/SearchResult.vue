@@ -10,7 +10,7 @@
     <a-button type="primary" @click="showModal">
       Voir le contenu
     </a-button>
-    <a-modal size="large" width="80%" :dialog-style="{ top: '20px' }" v-model="visible" :title=articles._source.titre>
+    <a-modal size="large" width="90%" :dialog-style="{ top: '20px' }" v-model="visible" :title=articles._source.titre>
       <template slot="footer">
         <a-button key="submit" type="primary" @click="handleOk">
           Fermer
