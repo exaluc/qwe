@@ -21,3 +21,8 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+
+# paginate tests
+QwePaginate.vue
+Test.vue

@@ -16,7 +16,7 @@
         text-align: center;
     }
 
-    .right {
+    .searchResults {
         width: 100%;
         padding: 30px;
         padding-top: 50px;
@@ -57,13 +57,11 @@
     <div class="search" id="qwe-fixed-top">
     <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
       <div class="logo-search" @click="goHome">
-        
         <span class="logo logo-red">Q</span>
         <span class="logo logo-yellow">w</span>
         <span class="logo logo-blue">e</span>
         <span class="logo logo-green">?</span>
       </div>
-      <logoSearch></logoSearch>
       <a-menu
         theme="dark"
         mode="horizontal"
@@ -78,12 +76,15 @@
                     @search="searchResult"/>
       </a-menu>
     </a-layout-header>
-        <div class="right">
-                        <div v-for="item in result" v-bind:key="item.titre">
+        <div class="searchResults">
+            <div v-if="Object.keys(result).length === 0"><a-list :data-source="[]" /></div>
+                <div v-for="item in result" v-bind:key="item.titre">
                 <searchResult :articles="item"></searchResult>
             </div>
         </div>
+  <a-back-top />
     </div>
+    
 </template>
 
 <script>
