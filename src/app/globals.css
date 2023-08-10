@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For light theme */
+.light {
+  --text-color: black;
+}
+
+/* For dark theme */
+.dark {
+  --text-color: white;
+}
+
+body {
+  color: var(--text-color);
+}
+
+p {
+  margin: 1rem;
+}
+
+code, kbd, samp, pre {
+  background-color: rgb(156, 156, 156);
+}
